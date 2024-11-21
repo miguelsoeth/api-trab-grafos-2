@@ -2,6 +2,12 @@
 
 Esta API calcula o caminho mais barato entre duas capitais, considerando o consumo de combustível e o preço da gasolina fornecidos pelo usuário.
 
+## Instalação
+
+Para rodar a API, abra um terminal na raiz do projeto e digite ``npm i`` e ``npm start``
+
+Ela irá rodar no endereço: ``http://localhost:3000/``
+
 ## Endpoints
 
 ### **[GET] /cidades**
