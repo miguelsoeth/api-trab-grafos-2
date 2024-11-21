@@ -14,8 +14,7 @@ Retorna a lista de todas as capitais disponíveis na API.
   "São Paulo",
   "Rio de Janeiro",
   "Salvador",
-  "Belo Horizonte",
-  ...
+  "Belo Horizonte"
 ]
  ``````` 
 
@@ -25,16 +24,16 @@ Calcula o caminho mais barato entre duas capitais.
 #### Exemplo de requisição:
 ```json
 {
-  "kmPerLiter": 10,
-  "precoGasolina": 5.50,
-  "origem": "São Paulo",
-  "destino": "Rio de Janeiro"
+  "kmPerLiter": 12,
+  "precoGasolina": 6,
+  "origem": "Porto Alegre",
+  "destino": "Florianópolis"
 }
  ``````` 
 
 #### Exemplo de Resposta:
 ```json
 {
-  "caminho": ["São Paulo", "Volta Redonda", "Rio de Janeiro"],
-  "custoTotal": 55.00
+  "caminho": ["Porto Alegre", "Florianópolis"],
+  "custoTotal": 268.00
 }
