@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Grafo = require('./Grafo');
 
-exports.construirGrafo = (kmPerLiter, precoGasolina) => {
+exports.construirGrafo = (kmPerLiter, precoGasolina, destino) => {
     const grafo = new Grafo();
     const dados = fs.readFileSync('./capitais.json', 'utf8');
     const capitais = JSON.parse(dados);
@@ -19,7 +19,9 @@ exports.construirGrafo = (kmPerLiter, precoGasolina) => {
         Object.entries(capital[name].neighbors).forEach(([vizinho, distancia]) => {
             grafo.adicionarVertice(vizinho);
             const custoGasolina = (distancia / kmPerLiter) * precoGasolina;
-            const custoTotal = custoGasolina + parseFloat(pedagios[vizinho] || 0);
+
+            const pedagio = parseFloat(pedagios[vizinho] || 0);
+            const custoTotal = vizinho === destino ? custoGasolina : custoGasolina + pedagio;
             grafo.adicionarAresta(name, vizinho, custoTotal.toFixed(2));
         });
     });

@@ -13,7 +13,7 @@ exports.findCheapestPath = (req, res) => {
         return res.status(400).json({ error: 'Consumo e preço da gasolina devem ser positivos.' });
     }
 
-    const { grafo, pedagios } = construirGrafo(kmPerLiter, precoGasolina);
+    const { grafo, pedagios } = construirGrafo(kmPerLiter, precoGasolina, destino);
 
     if (!grafo.vertices[origem] || !grafo.vertices[destino]) {
         return res.status(400).json({ error: 'Origem ou destino inválidos.' });
@@ -25,7 +25,7 @@ exports.findCheapestPath = (req, res) => {
         return res.status(404).json({ message: `Não há caminho entre ${origem} e ${destino}.` });
     }
 
-    const custoTotal = resultado.distancia - parseFloat(pedagios[destino] || 0);
+    const custoTotal = resultado.distancia;
     res.json({
         caminho: resultado.caminho,
         custoTotal: custoTotal.toFixed(2),
