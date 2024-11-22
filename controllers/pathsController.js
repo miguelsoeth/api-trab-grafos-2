@@ -22,10 +22,10 @@ exports.findCheapestPath = (req, res) => {
     const resultado = grafo.dijkstra(origem, destino);
 
     if (resultado.distancia === Infinity) {
-        return res.status(404).json({ error: `Não há caminho entre ${origem} e ${destino}.` });
+        return res.status(404).json({ message: `Não há caminho entre ${origem} e ${destino}.` });
     }
 
-    const custoTotal = resultado.distancia + parseFloat(pedagios[origem] || 0);
+    const custoTotal = resultado.distancia - parseFloat(pedagios[destino] || 0);
     res.json({
         caminho: resultado.caminho,
         custoTotal: custoTotal.toFixed(2),
