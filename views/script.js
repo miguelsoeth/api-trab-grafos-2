@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
             } else {
                 const errorData = await response.json();
-                alert(errorData.error || "Erro ao calcular o caminho.");
+                alert(errorData.error || "Rota inexistente.");
             }
         } catch (error) {
             alert("Erro ao calcular o caminho.");
