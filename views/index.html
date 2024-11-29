@@ -1,39 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caminho Mais Barato</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div id="app">
-        <h1>Cálculo do Caminho Mais Barato</h1>
-        
-        <div class="form-group">
-            <label for="kmPerLiter">Autonomia do Veículo (km/l):</label>
-            <input type="number" id="kmPerLiter" placeholder="Ex: 10">
+        <div class="header">
+            <h1><i class="fas fa-route"></i> Caminho Mais Barato</h1>
+            <p>Encontre a rota mais econômica para o seu destino</p>
+        </div>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="kmPerLiter"><i class="fas fa-tachometer-alt"></i> Autonomia do Veículo (km/l):</label>
+                <input type="number" id="kmPerLiter" placeholder="Ex: 10">
+            </div>
+            <div class="form-group">
+                <label for="precoGasolina"><i class="fas fa-gas-pump"></i> Preço do Combustível (R$/litro):</label>
+                <input type="number" id="precoGasolina" placeholder="Ex: 5.59">
+            </div>
+            <div class="form-group">
+                <label for="origem"><i class="fas fa-map-marker-alt"></i> Origem:</label>
+                <select id="origem"></select>
+            </div>
+            <div class="form-group">
+                <label for="destino"><i class="fas fa-map-marker-alt"></i> Destino:</label>
+                <select id="destino"></select>
+            </div>
         </div>
         
-        <div class="form-group">
-            <label for="precoGasolina">Preço do Combustível (R$/litro):</label>
-            <input type="number" id="precoGasolina" placeholder="Ex: 5.59">
+        <button id="calcularButton" class="cta-button">
+            <i class="fas fa-calculator"></i> Calcular
+        </button>
+        
+        <div id="resultado" class="resultado">
         </div>
-        
-        <div class="form-group">
-            <label for="origem">Origem:</label>
-            <select id="origem"></select>
-        </div>
-        
-        <div class="form-group">
-            <label for="destino">Destino:</label>
-            <select id="destino"></select>
-        </div>
-        
-        <button id="calcularButton">Calcular</button>
-        
-        <div id="resultado" class="resultado"></div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Caminho Mais Barato. Todos os direitos reservados.</p>
+        
+        <div class="social-icons">
+            <a href="#" title="Siga-nos no Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" title="Siga-nos no Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Siga-nos no Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <div class="signature">
+            <span>by</span>
+            <strong>Débora & Miguel</strong>
+        </div>
+    </footer>
+    
+
     <script src="script.js"></script>
 </body>
 </html>

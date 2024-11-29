@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const calcularButton = document.getElementById("calcularButton");
     const resultadoDiv = document.getElementById("resultado");
 
-    // Load cities from API
     async function loadCities() {
         try {
             const response = await fetch("http://localhost:3000/cidades");
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Calculate cheapest path
     async function calculatePath() {
         const kmPerLiter = parseFloat(kmPerLiterInput.value);
         const precoGasolina = parseFloat(precoGasolinaInput.value);
